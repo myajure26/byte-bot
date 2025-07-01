@@ -16,6 +16,10 @@ class Test(commands.Cog):
   async def saludar_a(self, ctx, usuario: commands.MemberConverter):
     await ctx.send(f'Hola, {usuario.mention}! {ctx.author.mention} te ha saludado.')
 
+  @commands.hybrid_command(name='eres', description="Saluda a un usuario específico")
+  async def saludar_a(self, ctx):
+    await ctx.send(f'gay')
+
 # Función para que el bot cargue este módulo
 async def setup(bot):
   await bot.add_cog(Test(bot))

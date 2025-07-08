@@ -18,3 +18,16 @@ class NekosAPI:
     except requests.exceptions.RequestException as e:
       print(f"Error fetching catgirl image: {e}")
       return None
+    
+  def anime_girlm(self, category=None):
+    if not category:
+      return "Please provide a category"
+  
+    url = f"{self.BASE_URL}/images/{category}"
+    try:
+      response = self.session.get(url, timeout=10)
+      response.raise_for_status()
+      return response.json()
+    except requests.exceptions.RequestException as e:
+      print(f"Error fetching {category} image: {e}")
+      return None

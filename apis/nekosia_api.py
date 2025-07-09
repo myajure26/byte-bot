@@ -2,7 +2,7 @@
 
 import requests
 
-class NekosAPI:
+class NekosiaAPI:
   BASE_URL = "https://api.nekosia.cat/api/v1"
 
   def __init__(self):
@@ -19,7 +19,7 @@ class NekosAPI:
       print(f"Error fetching catgirl image: {e}")
       return None
     
-  def anime_girlm(self, category=None):
+  def anime_girl(self, category=None):
     if not category:
       return "Please provide a category"
   

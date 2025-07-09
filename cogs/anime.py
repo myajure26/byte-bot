@@ -20,7 +20,7 @@ class Anime(commands.Cog):
     await ctx.send(embed=embed) 
 
   @commands.hybrid_command(name='anime_girl', description="Obtiene una imagen de un personaje de anime femenino aleatorio")
-  async def anime_girl(self, ctx, category: str = None):
+  async def anime_girl(self, ctx, category: str = "catgirl"):
     content = self.nekosiaApi.anime_girl(category=category)
     if not content:
       await ctx.send("❌ No se pudo obtener la imagen del personaje de anime.")

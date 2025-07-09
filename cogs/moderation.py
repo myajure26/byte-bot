@@ -9,7 +9,7 @@ class Moderation(commands.Cog):
   @commands.hybrid_command(name='purge', description="Borra mensajes en este canal")
   @commands.has_permissions(manage_messages=True)
   @commands.guild_only()
-  async def purge(self, ctx, quantity: int):
+  async def purge(self, ctx, quantity: int = 10):
     """Borra mensajes (máx. 100)
     
     Parámetros:

@@ -10,6 +10,7 @@ class MyBot(commands.Bot):
     # Configuración inicial
     self.TOKEN = os.getenv('TOKEN')
     self.PREFIX = os.getenv('PREFIX', '!')
+    self.ACTIVITY = os.getenv('ACTIVITY', 'Byte-Bot!')
     
     # Intents
     intents = discord.Intents.all()
@@ -37,6 +38,7 @@ class MyBot(commands.Bot):
             print(f"❌ Error al cargar {folder}/{filename}: {e}")
 
   async def on_ready(self):
+    await self.change_presence(activity=discord.Game(name=self.ACTIVITY))
     print(f"Bot conectado como {self.user}")
 
   def run(self):

@@ -17,7 +17,7 @@ class Gif(commands.Cog):
       title = f"Gif aleatorio sobre {gif_name}"
     else:
       content = self.tenor_api.featured_gif()
-      title = "Gif aleatorio featured"
+      title = "Gif aleatorio"
 
     gif_data = content.get("results", [])
     if not gif_data:
